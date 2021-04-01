@@ -15,29 +15,41 @@ public class Fraction {
     /**
      * Adds the fraction to the other fraction. Returns a new fraction.
      *
-     * @param other
+     * @param other fraction
      * @return new fraction
      */
     public Fraction plus(Fraction other) {
-        throw new UnsupportedOperationException();
+        int a, b, c;
+        a = MathUtils.findLowestCommonMultiple(denominator, other.denominator);
+
+        b = numerator * (a / denominator);
+        c = other.numerator * (a / other.denominator);
+
+        return new Fraction((b + c), a);
     }
 
     /**
      * Subtracts other from the fraction. Returns a new fraction.
      *
-     * @param other
+     * @param other fraction
      * @return new fraction
      */
     public Fraction minus(Fraction other) {
-        throw new UnsupportedOperationException();
+        int a, b, c;
+        a = MathUtils.findLowestCommonMultiple(denominator, other.denominator);
+        b = numerator * (a / denominator);
+        c = other.numerator * (a / other.denominator);
+
+        return new Fraction((b - c), a);
     }
 
     /**
      * Multiplies the two fractions. Returns a new fraction.
      *
-     * @param other
+     * @param other fraction
      * @return new fraction
      */
+
     public Fraction times(Fraction other) {
         return new Fraction((numerator * other.getNumerator()), (denominator * other.getDenominator()));
     }
@@ -45,7 +57,7 @@ public class Fraction {
     /**
      * Divides the two fractions (this / other). Returns a new fraction.
      *
-     * @param other
+     * @param other fraction
      * @return new fraction
      */
     public Fraction dividedBy(Fraction other) {
@@ -54,7 +66,7 @@ public class Fraction {
         int a = numerator * second.getNumerator();
         int b = denominator * second.getDenominator();
 
-        return new Fraction(a,b);
+        return new Fraction(a, b);
     }
     //endregion
 

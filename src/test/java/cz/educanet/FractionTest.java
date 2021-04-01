@@ -2,7 +2,8 @@ package cz.educanet;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 class FractionTest {
 
@@ -16,29 +17,29 @@ class FractionTest {
         assertEquals(1, fraction2.plus(fraction1).toFloat());
         assertEquals(1, fraction1.plus(fraction2).toFloat());
 
-        assertEquals(3f/5f, fraction3.plus(fraction2).toFloat());
-        assertEquals(3f/5f, fraction1.plus(fraction3).toFloat());
-        assertEquals(3f/5f, fraction3.plus(fraction1).toFloat());
+        assertEquals(3f / 5f, fraction3.plus(fraction2).toFloat());
+        assertEquals(3f / 5f, fraction1.plus(fraction3).toFloat());
+        assertEquals(3f / 5f, fraction3.plus(fraction1).toFloat());
 
-        assertEquals(2/10f, fraction3.plus(fraction3).toFloat());
+        assertEquals(2 / 10f, fraction3.plus(fraction3).toFloat());
     }
 
     @Test
     void minus() {
-        assertEquals(-2f/5, fraction3.minus(fraction2).toFloat());
-        assertEquals(-2f/5, fraction3.minus(fraction1).toFloat());
+        assertEquals(-2f / 5, fraction3.minus(fraction2).toFloat());
+        assertEquals(-2f / 5, fraction3.minus(fraction1).toFloat());
 
-        assertEquals(2f/5, fraction2.minus(fraction3).toFloat());
-        assertEquals(2f/5, fraction1.minus(fraction3).toFloat());
+        assertEquals(2f / 5, fraction2.minus(fraction3).toFloat());
+        assertEquals(2f / 5, fraction1.minus(fraction3).toFloat());
     }
 
     @Test
     void times() {
-        assertEquals(1f/20, fraction2.times(fraction3).toFloat());
-        assertEquals(1f/20, fraction3.times(fraction2).toFloat());
-        assertEquals(1f/20, fraction1.times(fraction3).toFloat());
+        assertEquals(1f / 20, fraction2.times(fraction3).toFloat());
+        assertEquals(1f / 20, fraction3.times(fraction2).toFloat());
+        assertEquals(1f / 20, fraction1.times(fraction3).toFloat());
 
-        assertEquals(1f/100, fraction3.times(fraction3).toFloat());
+        assertEquals(1f / 100, fraction3.times(fraction3).toFloat());
     }
 
     @Test
@@ -47,8 +48,8 @@ class FractionTest {
         assertEquals(1, fraction2.dividedBy(fraction2).toFloat());
         assertEquals(1, fraction1.dividedBy(fraction1).toFloat());
 
-        assertEquals(1f/5, fraction3.dividedBy(fraction2).toFloat());
-        assertEquals(1f/5, fraction3.dividedBy(fraction1).toFloat());
+        assertEquals(1f / 5, fraction3.dividedBy(fraction2).toFloat());
+        assertEquals(1f / 5, fraction3.dividedBy(fraction1).toFloat());
     }
 
     @Test
