@@ -54,8 +54,7 @@ public class Fraction {
         int a = numerator * second.getNumerator();
         int b = denominator * second.getDenominator();
 
-        Fraction fraction = new Fraction(a,b);
-        return fraction;
+        return new Fraction(a,b);
     }
     //endregion
 
@@ -67,8 +66,7 @@ public class Fraction {
      * @return new fraction
      */
     public Fraction getReciprocal() {
-        Fraction fraction = new Fraction(denominator, numerator);
-        return fraction;
+        return new Fraction(denominator, numerator);
     }
 
     /**
@@ -83,8 +81,7 @@ public class Fraction {
             a /= 2;
             b /= 2;
         }
-        Fraction fraction = new Fraction(a, b);
-        return fraction;
+        return new Fraction(a, b);
     }
 
     /**
@@ -93,10 +90,7 @@ public class Fraction {
      * @return float
      */
     public float toFloat() {
-        float a = numerator;
-        float b = denominator;
-        float c = a/b;
-        return c;
+        return (float) numerator / (float) denominator;
     }
     //endregion
 
