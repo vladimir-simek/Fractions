@@ -11,8 +11,10 @@ public class Fraction {
     }
 
     //region: basic operations (+, -, *, /)
+
     /**
      * Adds the fraction to the other fraction. Returns a new fraction.
+     *
      * @param other
      * @return new fraction
      */
@@ -22,6 +24,7 @@ public class Fraction {
 
     /**
      * Subtracts other from the fraction. Returns a new fraction.
+     *
      * @param other
      * @return new fraction
      */
@@ -31,6 +34,7 @@ public class Fraction {
 
     /**
      * Multiplies the two fractions. Returns a new fraction.
+     *
      * @param other
      * @return new fraction
      */
@@ -40,6 +44,7 @@ public class Fraction {
 
     /**
      * Divides the two fractions (this / other). Returns a new fraction.
+     *
      * @param other
      * @return new fraction
      */
@@ -49,8 +54,10 @@ public class Fraction {
     //endregion
 
     //region: other operations
+
     /**
      * Gets the reciprocal (flipped) of the fraction. ie. reciprocal of 1/2 is 2/1
+     *
      * @return new fraction
      */
     public Fraction getReciprocal() {
@@ -59,20 +66,30 @@ public class Fraction {
 
     /**
      * Simplifies the fraction
+     *
      * @return new fraction
      */
     public Fraction simplify() {
-        throw new UnsupportedOperationException();
+        int a = numerator;
+        int b = denominator;
+        while (a % 2 == 0 && b % 2 == 0) {
+            a /= 2;
+            b/=2;
+        }
+        Fraction fraction = new Fraction(a,b);
+        return fraction;
     }
 
     /**
      * Calculates the floating value of the fraction.
+     *
      * @return float
      */
     public float toFloat() {
-        throw new UnsupportedOperationException();
+        return (float) (numerator / denominator);
     }
     //endregion
+
 
     //region: getters
     public int getNumerator() {
