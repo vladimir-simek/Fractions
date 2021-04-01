@@ -61,7 +61,8 @@ public class Fraction {
      * @return new fraction
      */
     public Fraction getReciprocal() {
-        throw new UnsupportedOperationException();
+        Fraction fraction = new Fraction(denominator,numerator);
+        return fraction;
     }
 
     /**
