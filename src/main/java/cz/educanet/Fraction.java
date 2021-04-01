@@ -39,7 +39,7 @@ public class Fraction {
      * @return new fraction
      */
     public Fraction times(Fraction other) {
-        throw new UnsupportedOperationException();
+        return new Fraction((numerator * other.getNumerator()), (denominator * other.getDenominator()));
     }
 
     /**
@@ -49,7 +49,13 @@ public class Fraction {
      * @return new fraction
      */
     public Fraction dividedBy(Fraction other) {
-        throw new UnsupportedOperationException();
+        Fraction second = other.getReciprocal();
+
+        int a = numerator * second.getNumerator();
+        int b = denominator * second.getDenominator();
+
+        Fraction fraction = new Fraction(a,b);
+        return fraction;
     }
     //endregion
 
@@ -61,7 +67,7 @@ public class Fraction {
      * @return new fraction
      */
     public Fraction getReciprocal() {
-        Fraction fraction = new Fraction(denominator,numerator);
+        Fraction fraction = new Fraction(denominator, numerator);
         return fraction;
     }
 
@@ -75,9 +81,9 @@ public class Fraction {
         int b = denominator;
         while (a % 2 == 0 && b % 2 == 0) {
             a /= 2;
-            b/=2;
+            b /= 2;
         }
-        Fraction fraction = new Fraction(a,b);
+        Fraction fraction = new Fraction(a, b);
         return fraction;
     }
 
@@ -87,7 +93,10 @@ public class Fraction {
      * @return float
      */
     public float toFloat() {
-        return (float) (numerator / denominator);
+        float a = numerator;
+        float b = denominator;
+        float c = a/b;
+        return c;
     }
     //endregion
 
